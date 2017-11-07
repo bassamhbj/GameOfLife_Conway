@@ -5,14 +5,24 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GameOfLifeConsole {
+namespace GameOfLifeForm {
   public class LifeThread {
     private Observer obs;
     private Life life;
     private Thread lifeThread;
 
-    public LifeThread(Program program, Life life, Pattern.PatternTy patternTy) {
-      this.obs = program;
+    /* For Console Version use this Constructor */
+
+    //public LifeThread(Program program, Life life, Pattern.PatternTy patternTy) {
+    //  this.obs = program;
+    //  this.life = life;
+    //  lifeThread = new Thread(doLife);
+    //}
+
+    /* For Windows Form Version use this Constructor */
+
+    public LifeThread(Form1 form, Life life, Pattern.PatternTy patternTy) {
+      this.obs = form;
       this.life = life;
       lifeThread = new Thread(doLife);
     }
